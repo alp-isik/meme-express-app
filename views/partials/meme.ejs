@@ -1,0 +1,40 @@
+<section class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="row g-0">
+      <!-- LEFT: IMAGE -->
+      <div
+        class="col-md-6 d-flex align-items-center justify-content-center p-3"
+      >
+        <img
+          src="<%= meme.url %>"
+          alt="<%= meme.name %>"
+          class="img-fluid rounded"
+        />
+      </div>
+
+      <!-- RIGHT: INFO -->
+      <div class="col-md-6 p-4">
+        <h2 class="mb-3"><%= meme.name %></h2>
+
+        <p class="mb-1"><strong>ID:</strong> <%= meme.id %></p>
+
+        <p class="mb-1">
+          <strong>URL:</strong>
+          <a href="<%= meme.url %>" target="_blank" class="text-break">
+            <%= meme.url %>
+          </a>
+        </p>
+
+        <p class="mb-3">
+          <strong>Size:</strong> <%= meme.width %> × <%= meme.height %>
+        </p>
+
+        <hr class="my-4" />
+
+        <div class="text-end">
+          <a href="/memes" class="btn btn-secondary">← Back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+<section class="login" id="login">
+    <div class="p-5 text-center">
+    <% if (!user) { %>
+
+        <div class="card mx-auto text-start" style="max-width: 400px;">
+        <div class="card-body">
+            <h5 class="card-title text-center mb-3">Sign in</h5>
+
+            <form method="POST" action="/login">
+            <!-- Username -->
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input
+                id="username"
+                name="username"
+                type="text"
+                class="form-control"
+                autocomplete="username"
+                required
+                autofocus
+                />
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label for="current-password" class="form-label">Password</label>
+                <input
+                id="current-password"
+                name="password"
+                type="password"
+                class="form-control"
+                autocomplete="current-password"
+                required
+                />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+                Sign in
+            </button>
+            </form>
+        </div>
+        </div>
+
+    <% } %>
+
+    <% if (user) { %>
+        <div class="mx-auto" style="max-width: 400px;">
+        <p class="mb-3">Hey <%= user.username %>!</p>
+
+            <a href="/logout" class="btn btn-outline-secondary w-100">Log Out</a>
+        </div>
+    <% } %>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+<section class="container mt-4">
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Image</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% memes.forEach(meme => { %>
+        <tr class="<%= (viewedMemes && viewedMemes.includes(meme.id)) ? 'table-secondary' : '' %>">
+          <td><%= meme.id %></td>
+
+          <td><%= meme.name %></td>
+
+          <td><%= meme.width %> × <%= meme.height %></td>
+
+          <td>
+            <img
+              src="<%= meme.url %>"
+              alt="<%= meme.name %>"
+              style="width: <%= Math.round(Number(meme.width) * 0.2) %>px; height: auto;"
+            />
+          </td>
+          <td>
+            <% if (user) { %>
+              <button
+                type="button"
+                class="btn btn-sm btn-primary"
+                onclick="openMemeDetails(<%= meme.id %>)"
+              >
+                Details
+              </button>
+            <% } %>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>
