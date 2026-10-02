@@ -1,5 +1,3 @@
-# README.md for meme-express-app
-
 # Meme Express App
 
 A simple web application built with Node.js and Express that allows users to log in and browse memes from an external meme API. The project focuses on basic backend logic, routing, authentication flow, and server-side rendering using EJS.
